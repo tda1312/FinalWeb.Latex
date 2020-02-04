@@ -1,16 +1,14 @@
 .container{
 
-
 }
 .header{
-	border: 1px solid #eaeaea;
-	padding: 50px;
+	padding: 10px;
 }
 
 .body-layout{
 	border: 1px solid #eaeaea;
-	height: 500px;
-
+	height: 100%;
+	width: 100%;
 }
 .editor{
 	float: left;
@@ -83,12 +81,10 @@
 
 textarea{
 	width: 555px;
-	height: 270px;
+	height: 550px;
 	font-size: 20px;
 	padding: 10px;
 	line-height: 30px;
 	border-radius: 3px;
 	border: 1px solid #aaaaaa;
 }
-
-
