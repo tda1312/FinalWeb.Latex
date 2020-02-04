@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="latex.css">
-<script type="text/javascript" src="module.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <head>
-	<title></title>
-
-	<meta charset="utf-8"><title>	
+	<meta charset="utf-8"><title>
 	</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="jquery-linenumbers.js"></script>
 	<script>$('document').ready(function(){
 		$('#line_numbers').linenumbers({col_width:'75px'});
 	})</script>
-
-	
-	
 </head>
 <body>
 	<div class="container">
-		<div class="header"></div>
-
-		<div class="body-layout">
+		<div class="header">
+			<nav class="navbar navbar-light bg-light">
+	  <a class="navbar-brand" href="#">
+	    <img src="https://img.icons8.com/ios-filled/100/000000/tex-mex.png" width="50" height="50" class="d-inline-block align-top" alt="">
+		</a>
+		<ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Submit</a>
+  </li>
+</ul>
+	 </nav>
+		</div>
+ <div class="body-layout">
 			<div class="editor">
 				<div class="editor-toolbar"></div>
 				<div class="editor-body ace_editor ace-tm">
-					
 					<textarea id="line_numbers"></textarea>
-					
-				
-				</div>
+        </div>
 			</div>
 			<div class="preview">
 			<div class="preview-toolbar"></div>
@@ -36,10 +38,6 @@
 			</div>
 		</div>
 	</div>
-
 </body>
 
 </html>
-
-
-
