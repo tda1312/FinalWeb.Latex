@@ -71,3 +71,8 @@ body {
     transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
   }
 }
+
+@keyframes fadeout {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
