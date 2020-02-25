@@ -79,12 +79,7 @@
 	float: right;
 }
 
-textarea{
-	width: 555px;
-	height: 550px;
-	font-size: 20px;
-	padding: 10px;
-	line-height: 30px;
-	border-radius: 3px;
-	border: 1px solid #aaaaaa;
-}
+.rownr {overflow-y: hidden; background-color: rgb(105,105,105); color: white; text-align: right; vertical-align:top; z-index: 0; resize:none;}
+.txt {width: 669px; ; overflow-x: scroll; background: transparent; z-index: 0 ;resize: none; border: none; outline: none;}
+
+

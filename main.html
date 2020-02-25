@@ -2,16 +2,17 @@
 <html>
 <!-- <link rel="stylesheet" type="text/css" href="loading_page.css"> -->
 <link rel="stylesheet" type="text/css" href="latex.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="main.js"></script>
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
 <head>
 	<meta charset="utf-8"><title>
 	</title>
 	<script src="loading_page.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="jquery-linenumbers.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+	<!-- <script src="jquery-linenumbers.js"></script>
 	<script>$('document').ready(function(){
 		$('#line_numbers').linenumbers({col_width:'75px'});
-	})</script>
+	})</script> -->
 </head>
 <body>
 	<div class="container">
@@ -26,12 +27,23 @@
   </li>
 </ul>
 	 </nav>
+	 
 		</div>
  <div class="body-layout">
 			<div class="editor">
 				<div class="editor-toolbar"></div>
-				<div class="editor-body ace_editor ace-tm">
-					<textarea id="line_numbers"></textarea>
+				<!-- <div class="editor-body ace_editor ace-tm"> -->
+					<div>
+						<form action="" method="GET">
+					<textarea class="rownr" rows="20" cols="3" value="1" readonly></textarea>
+			<span>
+			<textarea class="txt" rows="20" cols="150" nowrap="nowrap" wrap="off"
+			autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+			onclick="selectionchanged(this)" onkeyup="keyup(this,event)" oninput="input_changed(this)" onscroll="scroll_changed(this)"></textarea><br/><br/>
+			
+			</span>
+					</form>
+					<!-- <textarea id="line_numbers"></textarea> -->
         </div>
 			</div>
 			<div class="preview">
