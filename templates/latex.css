@@ -2,9 +2,9 @@
 
 .container{
 	height: 100%;
-	width: 100%;
+	width: 100%;	
 	
-
+	
 }
 .header{
 	padding: 10px;
@@ -99,7 +99,7 @@
 	float: right;
 } */
 
-.rownr {float:left ; width: 10%;background-color: rgb(105,105,105); color: white; text-align: right; vertical-align:top; resize:none; overflow: hidden;}
+.rownr {float:left ; width: 5%;background-color: rgb(105,105,105); color: white; text-align: right; vertical-align:top; resize:none; overflow: hidden;}
 .txt { float:left;overflow-x: scroll; background: transparent; z-index: 0 ;resize: none; border: none; outline: none; width:90%; white-space: nowrap; }
 
 .cl{
@@ -151,10 +151,19 @@ ul li:hover a{
 	color:white;
 }
 
-#button{
+#button_compile{
 	float: right;
 	margin-top: 10px;
 	margin-right: 10px;
 	
 	
 }
+
+.nav-item dropdown{
+	margin-right: 10px;
+}
+
+#YourAccount{
+	margin-right: 10px;
+}
+
