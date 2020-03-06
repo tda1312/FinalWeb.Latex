@@ -14,6 +14,7 @@
     background: #192435;
     min-height: 16.4286px;
     padding: 10px 15px;
+    
   }
   .close {
     float: right;
@@ -35,3 +36,6 @@
     text-align: right;
     border-top: 1px solid #e5e5e5;
   }
+  .row{
+    margin-top: 10px;
+  } 
