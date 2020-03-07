@@ -34,6 +34,10 @@
 
 }
 
+#set {
+	width: 500px;
+	
+}
 .editor-toolbar{
 	height: 50px;
     background-color: #2c3645;
@@ -52,10 +56,12 @@
 
 .preview{
 	float: right;
-	width: 48%;
-	border: 1px solid #eaeaea;
-	margin: 10px;
-
+    width: 48%;
+    border: 1px solid #eaeaea;
+    margin-left: 26px;
+    margin-top: 10px;
+    display: inline-block;
+    position: absolute;
 
 }
 
