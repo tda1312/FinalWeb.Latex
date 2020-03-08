@@ -2,7 +2,53 @@ const fs = require('fs')
 const child_process = require('child_process')
 const path = require('path')
 
+
+
+const connection = require('../database')
+
+
 // Service for compiling
+
+const register = (request, response) => {
+    var username = request.body.username
+    var password = request.body.password
+    var email = request.body.email
+
+    if (username && password && email) {
+		connection.query('INSERT INTO accounts (username, password, email) VALUES(?,?,?)', [username, password, email], function(error) {
+			if (!error) {
+				response.redirect('/');
+			} else {
+				response.send(error);
+			}			
+			response.end();
+		});
+	} else {
+		response.send('Please fill all blanks!');
+		response.end();
+	}
+}
+
+const auth = (request, response) => {
+    var username = request.body.username
+    var password = request.body.password
+    
+	if (username && password) {
+		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
+			if (results.length > 0) {
+				request.session.loggedin = true;
+				request.session.username = username;
+				response.redirect('/');
+			} else {
+				response.send('Incorrect Username and/or Password!');
+			}			
+			response.end();
+		});
+	} else {
+		response.send('Please enter Username and Password!');
+		response.end();
+	}
+}
 const compileLateX = (body, res, callback) => {
     fs.writeFile('input.tex', body, (error) => {
         if (error) {
@@ -124,5 +170,7 @@ const checkFile = (file, callback) => {
 module.exports = {
     compileLateX,
     displayLateX,
-    downloadLateX
+    downloadLateX,
+    auth,
+    register
 }
