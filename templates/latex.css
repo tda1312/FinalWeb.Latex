@@ -15,7 +15,7 @@
 	height: 450px;
 	overflow: auto;
 	background: #333;
-	text-align: center;
+	/* text-align: center; */
 	border: solid 3px;
 }
 
@@ -74,6 +74,7 @@
 .preview-layout{
 	width: 50%;
 	height: 100%;
+	position: relative;
 
 
 }
@@ -86,9 +87,10 @@
 
 
 #button_compile{
-	float: right;
+	float: left;
 	margin-top: 10px;
 	margin-right: 10px;
+	background: none;
 	
 	
 }
@@ -100,4 +102,75 @@
 #YourAccount{
 	margin-right: 10px;
 }
+
+#pdf_navigation{
+	margin-bottom: 0px;
+}
+#pdf_zoom{
+	margin-top: 0px;
+	text-align: center;
+}
+
+.download{
+	float: right;
+	height: 50px;
+	width: 50px;
+	background: none;
+	border: none;
+	color: aliceblue;
+	outline-color: none;
+}
+
+.download  :hover{
+	transform: scale(1.5);
+}
+
+
+
+.btn-group{
+	position: absolute;
+	visibility: visible;
+	margin-top: 10px;
+	margin-left: 10px;
+	
+	
+}
+.btn-group :hover .zoom {
+	visibility: visible;
+
+}
+
+.btn-compile{
+    position: relative;
+    background-color: #ffffff;
+    border: none;
+    padding: 5px 5px;
+    overflow: hidden;
+    font-size: 15px;
+    transition: 0.4s;
+    margin-top: 9px;
+    margin-left: 9px;
+
+}
+.btn-compile:after{
+    content:"";
+    background: red;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    left:0;
+    bottom:0;
+    opacity:0;
+	transition:all 0.8s;
+
+}
+.btn-compile:active:after{
+    padding:0;
+    opacity:1;
+	transition:0s;
+	
+	
+}
+
 
