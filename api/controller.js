@@ -37,7 +37,7 @@ const authentication = (req, res) => {
     })
 }
 const getInputLateX = (req, res) => {
-    compileLateX(req.body.edit_body, res, (error) => {
+    compileLateX(req.body.edit_body, res, req.session.username, (error) => {
         if (error) {
             console.error(error)
             return
@@ -54,8 +54,8 @@ const getOutputLateX = (req, res) => {
     })
 }
 
-const getPDF = (req, res) => {
-    displayLateX(res, (error) => {
+const getPDF = (req,res) => {
+    displayLateX(res, req.session.username, (error) => {
         if (error) {
             console.error(error)
         }

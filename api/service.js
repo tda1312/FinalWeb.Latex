@@ -6,6 +6,7 @@ const path = require('path')
 
 const connection = require('../database')
 
+var filePath =""
 
 // Service for compiling
 
@@ -49,21 +50,42 @@ const auth = (request, response) => {
 		response.end();
 	}
 }
-const compileLateX = (body, res, callback) => {
-    fs.writeFile('input.tex', body, (error) => {
+const compileLateX = (body, res, username, callback) => {
+    var username = username
+    filePath = path.join(__dirname, "../", username)
+    if (!fs.existsSync(filePath)) {
+        fs.mkdir(filePath), (error) => {
+            if (error) {
+                console.log("Make directory error!")
+                return
+            }
+            console.log("Made directory")
+            
+            writeLatex(body, filePath)
+    
+        }
+       
+    } else {
+        writeLatex(body, filePath)
+    }
+   
+}
+
+const writeLatex = (body, folder) => {
+    fs.writeFile(path.join(folder,'input.tex'), body, (error) => {
         if (error) {
             console.log("writeFile error!")
             return
         }
         console.log("writeFile executed!")
-        compileProcess()
+        compileProcess(path.join(folder,'input.tex'), folder)
         return
     })
 }
 
 // Compile latex to pdf
-const compileProcess = (callback) => {    
-    runScript('pdflatex', ['input.tex'], (error) => {
+const compileProcess = (folderFile,folder, callback) => {    
+    runScript('pdflatex', ['-output-directory=' + folder,folderFile], (error) => {
         if (error) {
             console.log(error)
             return callback(error)
@@ -75,8 +97,11 @@ const compileProcess = (callback) => {
 }
 
 // Return pdf file
-const displayLateX = (res, callback) => {
-    file = 'input.pdf'
+const displayLateX = (res, username, callback) => {
+    
+    filePath = path.join(__dirname, "../", username)
+    file = path.join(filePath, 'input.pdf')
+    
     checkFile(file, (error) => {
         if (error) {
             console.log("Error checking file")
@@ -156,6 +181,7 @@ const downloadLateX = (res, callback) => {
 
 // Check if pdf is available
 const checkFile = (file, callback) => {
+
     fs.access(file, (error) => {
         if (error) {
             callback(error)
