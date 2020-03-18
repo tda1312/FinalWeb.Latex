@@ -142,19 +142,21 @@
 
 .btn-compile{
     position: relative;
-    background-color: #ffffff;
+    background-color:#007bff;
     border: none;
     padding: 5px 5px;
     overflow: hidden;
     font-size: 15px;
     transition: 0.4s;
     margin-top: 9px;
-    margin-left: 9px;
+	margin-left: 9px;
+	color: white;
+	border-radius: 10%;
 
 }
 .btn-compile:after{
     content:"";
-    background: red;
+    background:darkgrey;
     display: block;
     position: absolute;
     padding-top: 300%;
@@ -162,7 +164,7 @@
     left:0;
     bottom:0;
     opacity:0;
-	transition:all 0.8s;
+	transition:all 0.6s;
 
 }
 .btn-compile:active:after{
