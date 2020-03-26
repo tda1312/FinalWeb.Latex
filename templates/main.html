@@ -114,12 +114,12 @@
 				</div>
 					<div class="preview-layout">
 						<div class="btn-group" role="group">
-							<button type="button" class=" zoom btn btn-primary btn-group rounded-pill "  tooltip="Zoom In" tooltip-append-to-body="true" tooltip-placement="bottom">
+							<button id="zoom_in" type="button" class=" zoom btn btn-primary btn-group rounded-pill "  tooltip="Zoom In" tooltip-append-to-body="true" tooltip-placement="bottom">
 								<i class="fa fa-fw fa-search-plus">
 								
 								</i>
 							</button>
-							<button type="button" class=" zoom btn btn-primary btn-group rounded-pill " tooltip="Zoom Out" tooltip-append-to-body="true" tooltip-placement="bottom">
+							<button id="zoom_out" type="button" class=" zoom btn btn-primary btn-group rounded-pill " tooltip="Zoom Out" tooltip-append-to-body="true" tooltip-placement="bottom">
 								<i class="fa fa-fw fa-search-minus">
 								
 								</i>
@@ -147,7 +147,12 @@
 						   
 							</ul>
 						  </nav>
-				</div>
+					</div>
+					<div id='pdf_navigation'>
+						<button id="go_previous">Previous</button>
+						<input id="current_page" value="1" type="number"/>
+						<button id="go_next">Next</button>
+					</div>
 			</div>
 			
 		</div>
@@ -167,6 +172,3 @@
 							</div>
 					</div> -->
 
-<!-- <button class="btn btn-light btn-sm" id="go_previous">Previous</button>
-						<input id="current_page" value="1" type="number"/>
-						<button id="go_next">Next</button> -->
