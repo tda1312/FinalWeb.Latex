@@ -1,15 +1,11 @@
 const fs = require('fs')
 const child_process = require('child_process')
 const path = require('path')
-
-
-
 const connection = require('../database')
 
 var filePath =""
 
-// Service for compiling
-
+// Service for registration
 const register = (request, response) => {
     var username = request.body.username
     var password = request.body.password
@@ -30,6 +26,7 @@ const register = (request, response) => {
 	}
 }
 
+// Service for authentication
 const auth = (request, response) => {
     var username = request.body.username
     var password = request.body.password
@@ -50,62 +47,64 @@ const auth = (request, response) => {
 		response.end();
 	}
 }
-const compileLateX = (body, res, username, callback) => {
-    var username = username
-    filePath = path.join(__dirname, "../", username)
+
+// Service for compiling
+const compileLateX = (body, username, res) => {
+    filePath = path.join(__dirname, '../', 'userCompileFiles', username)
     if (!fs.existsSync(filePath)) {
-        fs.mkdir(filePath), (error) => {
+        fs.mkdir(filePath, (error) => {
             if (error) {
                 console.log("Make directory error!")
-                return
+                console.log(error)
+                return res.sendStatus(500)
             }
             console.log("Made directory")
-            
-            writeLatex(body, filePath)
-    
-        }
-       
+            writeLatex(body, filePath, res)
+        })
     } else {
-        writeLatex(body, filePath)
+        writeLatex(body, filePath, res)
     }
-   
 }
 
-const writeLatex = (body, folder) => {
-    fs.writeFile(path.join(folder,'input.tex'), body, (error) => {
+// Write input to file
+const writeLatex = (body, folder, res) => {
+    fs.writeFile(path.join(folder, 'input.tex'), body, (error) => {
         if (error) {
             console.log("writeFile error!")
-            return
+            return res.sendStatus(500)
         }
         console.log("writeFile executed!")
-        compileProcess(path.join(folder,'input.tex'), folder)
+        compileProcess(path.join(folder,'input.tex'), folder, res)
         return
     })
 }
 
 // Compile latex to pdf
-const compileProcess = (folderFile,folder, callback) => {    
-    runScript('pdflatex', ['-output-directory=' + folder,folderFile], (error) => {
+const compileProcess = (folderFile, folder, res) => {
+    runScript('pdflatex', ['-output-directory=' + folder, folderFile], (error) => {
         if (error) {
-            console.log(error)
-            return callback(error)
+            console.log("Error compiling")
+            return res.sendStatus(500)
         }
         console.log("Process finished.")
         console.log("Closing")
+        // res.redirect('/')
+        res.json({ success : "Successfully get input", status : 200})
         return
     })
 }
 
 // Return pdf file
-const displayLateX = (res, username, callback) => {
-    
-    filePath = path.join(__dirname, "../", username)
+const displayLateX = (res, username) => {
+    // console.log("1: ", username)
+    // console.log("2: ", path.join(__dirname, '../', 'userCompileFiles', username))
+    filePath = path.join(__dirname, '../', 'userCompileFiles', username)
     file = path.join(filePath, 'input.pdf')
     
     checkFile(file, (error) => {
         if (error) {
             console.log("Error checking file")
-            return displayLateX(res)
+            return
         }
         console.log("Checked file")
 
@@ -134,9 +133,9 @@ const displayLateX = (res, username, callback) => {
 //     }
 // })
 
+// Run compiling command
 const runScript = (command, args, callback) => {
     console.log("Starting process.")
-    
     const child = child_process.spawn(command, args)
 
     child.on('close', (code) => {
@@ -161,8 +160,8 @@ const deleteFiles = (files, callback) => {
 }
 
 // Service for downloading
-const downloadLateX = (res, callback) => {
-    let file = path.join('./', 'input.pdf')
+const downloadLateX = (res, username, callback) => {
+    let file = path.join('../', 'userCompileFiles', username, 'input.pdf')
     let check = checkFile(file, (error) => {
         if (error) {
             console.log("Error checking file")
@@ -181,7 +180,6 @@ const downloadLateX = (res, callback) => {
 
 // Check if pdf is available
 const checkFile = (file, callback) => {
-
     fs.access(file, (error) => {
         if (error) {
             callback(error)
