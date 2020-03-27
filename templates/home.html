@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="home.css">
+	<link rel="stylesheet" href="latex.css">
+	<link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+	<link rel=”stylesheet” href=”https://use.fontawesome.com/releases/v5.6.3/css/all.css” integrity=”sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/” crossorigin=”anonymous”>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="home_style.js" ></script>
+	<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.2.228/build/pdf.min.js"></script>
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	<!-- <script src="vendor/jquery/jquery.slim.min.js"></script>
+  	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  -->
+
+</head>
+<body>
+
+	<header>
+		<!--Navbar-->
+		<nav class="mb-1 navbar navbar-expand-xl navbar-dark info-color bg-dark">
+			<a class="navbar-brand" href="#" style="font-family: 'Knewave', cursive;">LaTexOnlineEditor</a>
+			<div id="set">
+
+			</div>
+			<!-- <marquee id="rp" behavior="scroll" scrollamount = "10" direction="right" style="color: ghostwhite;" ></marquee> -->
+			<script>
+
+				// var rp = Math.floor(Math.random() * 1000) + 100;
+				// var randomID = Math.floor(Math.random() * 10) + 1;
+				//
+				// function makeid(length) {
+				// 	var result           = '';
+				// 	var characters       = 'Wellcome to group 1';
+				// 	var charactersLength = characters.length;
+				// 	for ( var i = 0; i < length; i++ ) {
+				// 		result += characters.charAt(Math.floor(Math.random() * charactersLength));
+				// 	}
+				// 	return result;
+				// }
+
+				// var ten = makeid(4);
+				$(function(){
+					var documentEl= $(document),
+					fadeElem = $('.fade-scroll');
+				documentEl.on('scroll',function()
+			{
+				var currScrollPos = document.scrollTop();
+				fadeElem.each(function(){
+					var $this = $(this),
+					elemtOffsetTop = $this.offset().top;
+					if(currScrollPos>elemtOffsetTop) $this.css('opacity',1-(currScrollPos-elemtOffsetTop)/100)
+				});
+			});
+		});
+				var ten = 'Wellcome to group 1'
+				// document.getElementById("rp").innerHTML = ten + " vừa nhận được " + rp + " RP từ hệ thống LatexOnlineEditor";
+				document.getElementById("set").innerHTML = '<marquee behavior="scroll" scrollamount = "10" direction="right" style="color: ghostwhite;" >'+ ten +'</marquee>';
+			</script>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+			  aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+			  <ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+				  <a class="nav-link" href="register.html">
+					<button type="button" class="btn btn-light btn-outline-primary" >Register</button>
+					<span class="sr-only">(current)</span>
+				  </a>
+				</li>
+				<li class="nav-item active">
+				  <a class="nav-link" href="login.html">
+					 <button type="button" class="btn btn-light btn-outline-primary" >Login</button>
+					<span class="sr-only">(current)</span>
+				  </a>
+				</li>
+			  </ul>
+			</div>
+
+		  </nav>
+			</header>
+
+<body id="gradient" >
+	<div class="label_content">
+		LaTexOnlineEditor</div>
+	<div class="body_content">
+			The easy to use, online, free, coolaborative LaTex editor
+	</div>
+	 <div class=" img_home"><img class=" img_shadow-right img_shadow-left" src="http://webcoban.vn/image/cat-2.jpg"></div>
+	 <div class="home_footer">
+
+		 <div class="body_content1">Get started now</div>
+
+		  
+		  <a class="nav-link" href="login.html">
+			<button type="button" class="button_footer" >Start</button>
+		   <span class="sr-only">(current)</span>
+		 </a>
+	 </div>
+</body>
+</html>
