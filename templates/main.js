@@ -1,7 +1,23 @@
 var cntline;
 
 function compile() {
-	document.getElementById("form_edit").submit();
+	console.log(document.getElementById('text_body').value);
+	const url = "/compile";
+	fetch(url, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			edit_body: document.getElementById('text_body').value
+		})
+	}).then((response) => {
+		response.json();
+	}).then((data) => {
+		console.log('Success: ', data);
+	}).catch((error) => {
+		console.log('Error: ', error);
+	});
 
 	getPDF();
 }
@@ -39,7 +55,7 @@ async function getPDF() {
 		zoom: 1
 	}
 
-	await wait(5000)
+	await wait(3000)
 	console.log("Here we go!")
 	pdfjsLib.getDocument('/compile/input.pdf').promise.then((pdf) => {
 		console.log("PDF loaded")
