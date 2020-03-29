@@ -8,6 +8,16 @@ const {
 const path = require('path')
 
 const generateIndex = (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../templates', 'loading_page.html'))
+    return
+}
+
+const generateHome = (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../templates', 'home.html'))
+    return
+}
+
+const generateMain = (req, res) => {
     res.sendFile(path.resolve(__dirname, '../templates', 'main.html'))
     return
 }
@@ -41,7 +51,6 @@ const authentication = (req, res) => {
     return
 }
 const getInputLateX = (req, res) => {
-    console.log(req.body)
     compileLateX(req.body.edit_body, req.session.username, res, (error) => {
         if (error) {
             console.error(error)
@@ -71,6 +80,8 @@ const getPDF = (req,res) => {
 
 module.exports = {
     generateIndex,
+    generateHome,
+    generateMain,
     getInputLateX,
     getOutputLateX,
     getPDF,

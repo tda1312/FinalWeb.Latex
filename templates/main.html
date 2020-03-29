@@ -16,15 +16,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.2.228/build/pdf.min.js"></script>
 	<script src="main.js" ></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<<<<<<< Updated upstream
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	
-=======
 	<script src="http://malsup.github.com/jquery.form.js"></script> 
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
->>>>>>> Stashed changes
 	
 
 </head>
@@ -65,7 +59,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
 			  <ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-				  <a class="nav-link" href="login.html">
+				  <a class="nav-link" href="home.html">
 					<i></i> Log out
 					<span class="sr-only">(current)</span>
 				  </a>
@@ -111,12 +105,10 @@
 			</div>	
 			<div class="preview">
 				<div class="preview-toolbar">
-					<form id="ElementWithForm" action="/compile" method="POST" onclick="compile()">
-							
-						<button id="submit-button" class="btn-compile" >Compile</button>
-						<!-- <button id="button_compile" type="button" class="btn btn-light btn-sm" onclick="compile()">Compile</button> -->
+					<button id="submit-button" class="btn-compile" onclick="compile()">Compile</button>
+					<form id="ElementWithForm" action="/download" method="GET">
 						<button class="download" type="button" data-toggle="tooltip" data-placement="bottom" title="Download pdf file" ><i class="fa fa-download"></i></button>
-					<!-- </form>		 -->
+					</form>		
 				</div>
 					<div class="preview-layout">
 						<div class="btn-group" role="group">

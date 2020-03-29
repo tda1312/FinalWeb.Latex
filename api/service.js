@@ -14,7 +14,7 @@ const register = (request, response) => {
     if (username && password && email) {
 		connection.query('INSERT INTO accounts (username, password, email) VALUES(?,?,?)', [username, password, email], function(error) {
 			if (!error) {
-				response.redirect('/');
+				response.redirect('/home');
 			} else {
 				response.send(error);
 			}			
@@ -36,7 +36,7 @@ const auth = (request, response) => {
 			if (results.length > 0) {
 				request.session.loggedin = true;
 				request.session.username = username;
-				response.redirect('/');
+				response.redirect('/main');
 			} else {
 				response.send('Incorrect Username and/or Password!');
 			}			
@@ -88,7 +88,6 @@ const compileProcess = (folderFile, folder, res) => {
         }
         console.log("Process finished.")
         console.log("Closing")
-        // res.redirect('/')
         res.json({ success : "Successfully get input", status : 200})
         return
     })

@@ -1,5 +1,7 @@
 const {
     generateIndex,
+    generateHome,
+    generateMain,
     getInputLateX,
     getOutputLateX,
     getPDF,
@@ -10,6 +12,8 @@ const {
 const router = require('express').Router()
 
 router.get('/', generateIndex)
+router.get('/home', generateHome)
+router.get('/main', generateMain)
 router.get('/download', getOutputLateX)
 router.post('/compile', getInputLateX)
 router.get('/compile/input.pdf', getPDF)
