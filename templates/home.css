@@ -1,0 +1,113 @@
+
+@import url('https://fonts.googleapis.com/css?family=Knewave|Roboto&display=swap');
+.home_footer{
+	background-color: black;
+	width: 100%;
+	height:  220px;
+	top:85%;
+	position: absolute;
+	opacity: 0.8;
+}
+
+.label_content{
+	text-align: center;
+	font-family: 'Knewave', cursive;
+	color: white;
+	font-size: 90px;
+}
+.body_content{
+	text-align: center;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+}
+#gradient
+{
+width: 100%;
+height: 800px;
+padding: 0px;
+margin: 0px;
+}
+.img_home{
+	position: absolute;
+	top: 40%;
+	left: 20%;
+	margin: 0 auto;
+	z-index: 0;
+}
+.body_content1{
+	text-align: center;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-size: 25px;
+	margin-top: 5px;
+}
+.button_footer{
+	margin:auto;
+ 	display:block;
+}
+.img_home:hover{
+	transform: scale(1.25,1.15);
+	transition: 1.5s;
+}
+.img_shadow-right {
+    background-color: black;
+    -moz-box-shadow: 3px 3px 5px 0px #666;
+    -webkit-box-shadow: 3px 3px 5px 0px #666;
+    box-shadow: 3px 3px 5px 0px #666;
+}
+.img_shadow-left {
+    background-color: black;
+    -moz-box-shadow: -3px -3px 5px 0px #666;
+    -webkit-box-shadow: -3px -3px 5px 0px #666;
+    box-shadow: -3px -3px 5px 0px #666;
+}
+.container{
+	height: 100%;
+	width: 100%;
+
+
+}
+.header{
+	padding: 10px;
+}
+
+.button_footer{
+	margin: auto;
+  height: 1.56em;
+  padding: 0em 0.8em 0em 1.8em;
+  font-size: 2.5em;
+  font-weight: bold;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  color: #696666;
+  background: url(https://i.imgur.com/Th606mh.png) no-repeat scroll 0.75em 0.07em transparent;
+  background-size: 34px 104px;
+  border-radius: 2em;
+  border: 0.15em solid #F9C23C;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.button_footer:hover {
+    color: #fff;
+    background-color: #EAA502;
+    border-color: #EAA502;
+    background-position: 0.75em bottom;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.button_footer:focus {
+    background-position: 2em -4em;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+/* Webfonts */
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
