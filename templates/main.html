@@ -105,10 +105,16 @@
 			</div>	
 			<div class="preview">
 				<div class="preview-toolbar">
-					<button id="submit-button" class="btn-compile" onclick="compile()">Compile</button>
-					<form id="ElementWithForm" action="/download" method="GET">
+
+					<form id="ElementWithForm" action="/compile" method="POST" onclick="compile()" style="float: left;">
+							
+						<button id="submit-button" class="btn-compile" >Compile</button>
+						<!-- <button id="button_compile" type="button" class="btn btn-light btn-sm" onclick="compile()">Compile</button> -->
+					</form>	
+						
+					<form class="ElementWithForm2" style="float: right;">
 						<button class="download" type="button" data-toggle="tooltip" data-placement="bottom" title="Download pdf file" ><i class="fa fa-download"></i></button>
-					</form>		
+					</form>	
 				</div>
 					<div class="preview-layout">
 						<div class="btn-group" role="group">
