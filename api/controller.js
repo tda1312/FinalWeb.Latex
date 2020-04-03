@@ -51,12 +51,15 @@ const authentication = (req, res) => {
     return
 }
 const getInputLateX = (req, res) => {
+    
+    console.log(req.body);
     compileLateX(req.body.edit_body, req.session.username, res, (error) => {
         if (error) {
             console.error(error)
             return
         }
     })
+
     return
 }
 
