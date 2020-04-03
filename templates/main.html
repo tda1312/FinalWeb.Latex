@@ -11,7 +11,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+	<link rel="stylesheet" href="codemirror/lib/codemirror.css">
+	<link rel="stylesheet" href="codemirror/theme/dracula.css">
+	<script src="codemirror/lib/codemirror.js"></script>
+	<script src="codemirror/mode/stex/stex.js"></script>
+	
 
 	<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.2.228/build/pdf.min.js"></script>
 	<script src="main.js" ></script>
@@ -32,26 +36,7 @@
 				 <marquee id="rp" behavior="scroll" scrollamount = "10" direction="right" style="color: ghostwhite;" >Welcome to Group 1 project </marquee>  
 			</div>
 			
-			<script>
-				
-				// var rp = Math.floor(Math.random() * 1000) + 100;
-				// var randomID = Math.floor(Math.random() * 10) + 1;
-				
-				// function makeid(length) {
-				// 	var result           = '';
-				// 	var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-				// 	var charactersLength = characters.length;
-				// 	for ( var i = 0; i < length; i++ ) {
-				// 		result += characters.charAt(Math.floor(Math.random() * charactersLength));
-				// 	}
-				// 	return result;
-				// }
-		
-				// var ten = makeid(4);
-				// // document.getElementById("rp").innerHTML = ten + " vừa nhận được " + rp + " RP từ hệ thống LatexOnlineEditor";
-				// document.getElementById("set").innerHTML = '<marquee id="rp" behavior="scroll" scrollamount = "10" direction="right" style="color: ghostwhite;" >'+ ten +'</marquee>';
-			</script>
-
+			
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
 			  aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="navbar-toggler-icon"></span>
@@ -92,9 +77,9 @@
 					
 				</div>
 					<div class="editor-layout">
-						<textarea class="rownr" rows="30" value="1" readonly></textarea>
+						
 						<form action="/compile" class="form_edit" id="form_edit" method="POST">
-							<textarea name="edit_body" id="text_body" class="txt" rows="30" cols="150" nowrap="nowrap" wrap="off"
+							<textarea name="edit_body" id="text_body" class="txt" rows="500" cols="150" nowrap="nowrap" wrap="off"
 								autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
 								onclick="selectionchanged(this)" onkeyup="keyup(this,event)" oninput="input_changed(this)" onscroll="scroll_changed(this)"></textarea><br/><br/>
 						</form>
@@ -106,13 +91,13 @@
 			<div class="preview">
 				<div class="preview-toolbar">
 
-					<button id="submit-button" class="btn-compile" onclick="compile()">Compile</button>
-					<form id="ElementWithForm" style="float: right;" action="/download" method="GET">
-						<button class="download" type="button" data-toggle="tooltip" data-placement="bottom" title="Download pdf file" ><i class="fa fa-download"></i></button>
-					</form>		
+					 <button id="submit-button" class="btn-compile" onclick="compile()">Compile</button>
+						<!-- <form id="ElementWithForm" style="float: right;" action="/download" method="GET">
+							<button class="download" type="button" data-toggle="tooltip" data-placement="bottom" title="Download pdf file" ><i class="fa fa-download"></i></button>
+						</form>		  -->
 				</div>
-					<div class="preview-layout">
-						<div class="btn-group" role="group">
+					<div id = "viewer" class="preview-layout">
+						<!-- <div class="btn-group" role="group">
 							<button id="zoom_in" type="button" class=" zoom btn btn-primary btn-group rounded-pill "  tooltip="Zoom In" tooltip-append-to-body="true" tooltip-placement="bottom">
 								<i class="fa fa-fw fa-search-plus">
 								
@@ -124,37 +109,23 @@
 								</i>
 							</button>
 						</div>
-				<!-- <embed src="C:\Users\Admin\Desktop\New folder\FinalWeb.Latex\nguyenkhanhnam.pdf" type="" width="800px" height="2100px"> -->
-							<canvas id='pdf_renderer'></canvas>
+			 <embed src="C:\Users\Admin\Desktop\New folder\FinalWeb.Latex\nguyenkhanhnam.pdf" type="" width="800px" height="2100px"> -->
+							<!-- <canvas id='pdf_renderer'></canvas> --> 
+							
 
 					</div>
 
-					
-					<div id='pdf_navigation'>
-						
-						<nav aria-label="Page navigation example">
-							<ul class="pagination justify-content-center">
-							  <li class="page-item ">
-								<a class="page-link" href="#" tabindex="-1">Previous</a>
-							  </li>
-							  <li class="page-item"><a class="page-link" href="#">1</a></li>
-							  <li class="page-item"><a class="page-link" href="#">2</a></li>
-							  <li class="page-item"><a class="page-link" href="#">3</a></li>
-							  <li class="page-item">
-								<a class="page-link" href="#">Next</a>
-							  </li>
-						   
-							</ul>
-						  </nav>
-					</div>
-					<div id='pdf_navigation'>
+			
+					<!-- <div id='pdf_navigation'>
 						<button id="go_previous">Previous</button>
 						<input id="current_page" value="1" type="number"/>
 						<button id="go_next">Next</button>
-					</div>
+					</div> -->
 			</div>
 			
 		</div>
+	
+
 	
 	
 </body>
@@ -171,3 +142,6 @@
 							</div>
 					</div> -->
 
+					<form id="ElementWithForm" style="float: right;" action="/download" method="GET">
+						<button class="download" type="button" data-toggle="tooltip" data-placement="bottom" title="Download pdf file" ><i class="fa fa-download"></i></button>
+					</form>	

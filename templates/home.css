@@ -10,6 +10,11 @@
 	opacity: 0.8;
 }
 
+embed {
+  width: 900px;
+  height: 900px;
+}
+
 .label_content{
 	text-align: center;
 	font-family: 'Knewave', cursive;
