@@ -27,29 +27,29 @@
 	<header>
 		<!--Navbar-->
 		<nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color bg-dark">
-			<a class="navbar-brand" href="#">Latex Editor Online</a>
+			<a class="navbar-brand" href="#" style="font-family: 'Knewave', cursive;">Latex Editor Online</a>
 			<div id="set">
-				
+				 <marquee id="rp" behavior="scroll" scrollamount = "10" direction="right" style="color: ghostwhite;" >Welcome to Group 1 project </marquee>  
 			</div>
-			<!-- <marquee id="rp" behavior="scroll" scrollamount = "10" direction="right" style="color: ghostwhite;" ></marquee> -->
+			
 			<script>
 				
-				var rp = Math.floor(Math.random() * 1000) + 100;
-				var randomID = Math.floor(Math.random() * 10) + 1;
+				// var rp = Math.floor(Math.random() * 1000) + 100;
+				// var randomID = Math.floor(Math.random() * 10) + 1;
 				
-				function makeid(length) {
-					var result           = '';
-					var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-					var charactersLength = characters.length;
-					for ( var i = 0; i < length; i++ ) {
-						result += characters.charAt(Math.floor(Math.random() * charactersLength));
-					}
-					return result;
-				}
+				// function makeid(length) {
+				// 	var result           = '';
+				// 	var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+				// 	var charactersLength = characters.length;
+				// 	for ( var i = 0; i < length; i++ ) {
+				// 		result += characters.charAt(Math.floor(Math.random() * charactersLength));
+				// 	}
+				// 	return result;
+				// }
 		
-				var ten = makeid(4);
-				// document.getElementById("rp").innerHTML = ten + " vừa nhận được " + rp + " RP từ hệ thống LatexOnlineEditor";
-				document.getElementById("set").innerHTML = '<marquee id="rp" behavior="scroll" scrollamount = "10" direction="right" style="color: ghostwhite;" >'+ ten +'</marquee>';
+				// var ten = makeid(4);
+				// // document.getElementById("rp").innerHTML = ten + " vừa nhận được " + rp + " RP từ hệ thống LatexOnlineEditor";
+				// document.getElementById("set").innerHTML = '<marquee id="rp" behavior="scroll" scrollamount = "10" direction="right" style="color: ghostwhite;" >'+ ten +'</marquee>';
 			</script>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"

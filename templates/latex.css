@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Knewave|Roboto&display=swap');
 
 .container{
 	height: 100%;
@@ -35,7 +35,7 @@
 }
 
 #set {
-	width: 500px;
+	width: 80%;
 	
 }
 .editor-toolbar{
@@ -83,7 +83,7 @@
 
 
 .rownr {float:left ; width: 5%;background-color: rgb(105,105,105); color: white; text-align: right; vertical-align:top; resize:none; overflow: hidden;}
-.txt { float:left;overflow-x: scroll; background: transparent; z-index: 0 ;resize: none; border: none; outline: none; width:90%; white-space: nowrap; }
+.txt { float:left;overflow-x: scroll; background: transparent; z-index: 0 ;resize: none; border: none; outline: none; width:95%; white-space: nowrap; }
 
 
 
