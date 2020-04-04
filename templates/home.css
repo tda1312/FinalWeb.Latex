@@ -195,10 +195,27 @@ footer {
       margin-top: 547px;
   }
 
-button:hover{
+  #asd1{
+       background: #343a40; 
     
+     color: darkkhaki; border-color: darkkhaki; 
   }
-  
+
+#asd1:hover{
+   color: #343a40 ;
+   background: khaki;
+  }
+  #asd2{
+    background: #343a40; 
+ 
+  color: darkkhaki; border-color: darkkhaki; 
+}
+
+#asd2:hover{
+color: #343a40 ;
+background: khaki;
+}
+
   
 
   
