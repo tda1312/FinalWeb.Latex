@@ -3,8 +3,8 @@
 .home_footer{
 	background-color: black;
 	width: 100%;
-	height:  152px;
-	top:84%;
+	height:  200px;
+	top:86%;
     position: absolute;
     bottom: 0px;
 	opacity: 0.8;
@@ -31,8 +31,7 @@ embed {
 {
 width: 100%;
 height: 800px;
-padding: 0px;
-margin: 0px;
+
 }
 .img_home{
 	position: absolute;
@@ -52,11 +51,11 @@ margin: 0px;
 	margin:auto;
  	display:block;
 }
-.img_home:hover{
+/* .img_home:hover{
 	transform: scale(1.25,1.15);
 	transition: 1.5s;
-}
-.img_shadow-right {
+} */
+/* .img_shadow-right {
     background-color: black;
     -moz-box-shadow: 3px 3px 5px 0px #666;
     -webkit-box-shadow: 3px 3px 5px 0px #666;
@@ -67,12 +66,15 @@ margin: 0px;
     -moz-box-shadow: -3px -3px 5px 0px #666;
     -webkit-box-shadow: -3px -3px 5px 0px #666;
     box-shadow: -3px -3px 5px 0px #666;
+} */
+.img-fluid{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 .container{
 	height: 100%;
-	width: 100%;
-
-
+  width: 100%;
 }
 .header{
 	padding: 10px;
@@ -192,7 +194,7 @@ footer {
 
   .home_footer2{
       position: relative;
-      margin-top: 547px;
+      background-color: #222;
   }
 
   #asd1{
