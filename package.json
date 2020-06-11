@@ -18,10 +18,11 @@
   "homepage": "https://github.com/tda1312/OnlineLateXEditorAPI#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "codemirror": "^5.52.2",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "http": "0.0.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mime": "^2.4.4",
     "mysql": "^2.18.1",
     "path": "^0.12.7",

@@ -1,6 +1,21 @@
 var cntline;
 
+var editor;
+window.onload = function () {
+	editor = CodeMirror.fromTextArea(document.getElementById("text_body"), {
+		mode: "stex",
+		lineNumbers: "true",
+		theme: "dracula"
+	});
+
+	editor.setSize(null,900);
+	
+}
+
+
 function compile() {
+	var text = editor.getValue();
+
 	console.log(document.getElementById('text_body').value);
 	const url = "/compile";
 	fetch(url, {
@@ -9,7 +24,7 @@ function compile() {
 			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify({
-			edit_body: document.getElementById('text_body').value
+			edit_body: text
 		})
 	}).then((response) => {
 		response.json();
@@ -18,8 +33,10 @@ function compile() {
 	}).catch((error) => {
 		console.log('Error: ', error);
 	});
-
+	
 	getPDF();
+
+	// 
 }
 
 async function wait(ms) {
@@ -49,78 +66,81 @@ function render(myState) {
 }
 
 async function getPDF() {
-	var myState = {
-		pdf: null,
-		currentPage: 1,
-		zoom: 1
-	}
+	await wait(3000);
+	document.getElementById("viewer").innerHTML = '<embed src="/compile/input.pdf">'
 
-	await wait(3000)
-	console.log("Here we go!")
-	pdfjsLib.getDocument('/compile/input.pdf').promise.then((pdf) => {
-		console.log("PDF loaded")
-		myState.pdf = pdf;
-		render(myState);
+	// var myState = {
+	// 	pdf: null,
+	// 	currentPage: 1,
+	// 	zoom: 1
+	// }
 
-		document.getElementById('go_previous').addEventListener('click', (e) => {
-			if(myState.pdf == null || myState.currentPage == 1){
-				return;
-			}
-			myState.currentPage -= 1;
-			document.getElementById("current_page").value = myState.currentPage;
+	// await wait(3000)
+	// console.log("Here we go!")
+	// pdfjsLib.getDocument('/compile/input.pdf').promise.then((pdf) => {
+	// 	console.log("PDF loaded")
+	// 	myState.pdf = pdf;
+	// 	render(myState);
+
+	// 	document.getElementById('go_previous').addEventListener('click', (e) => {
+	// 		if(myState.pdf == null || myState.currentPage == 1){
+	// 			return;
+	// 		}
+	// 		myState.currentPage -= 1;
+	// 		document.getElementById("current_page").value = myState.currentPage;
 			
-			render(myState);
-		});
+	// 		render(myState);
+	// 	});
 		
-		document.getElementById('go_next').addEventListener('click', (e) => {
-			if(myState.pdf == null || myState.currentPage > myState.pdf._pdfInfo.numPages) {
-				return;
-			}
-			myState.currentPage += 1;
-			document.getElementById("current_page").value = myState.currentPage;
+	// 	document.getElementById('go_next').addEventListener('click', (e) => {
+	// 		if(myState.pdf == null || myState.currentPage > myState.pdf._pdfInfo.numPages) {
+	// 			return;
+	// 		}
+	// 		myState.currentPage += 1;
+	// 		document.getElementById("current_page").value = myState.currentPage;
 	
-			render(myState);
-		});
+	// 		render(myState);
+	// 	});
 		
-		document.getElementById('current_page').addEventListener('keypress', (e) => {
-			if(myState.pdf == null) return;
+	// 	document.getElementById('current_page').addEventListener('keypress', (e) => {
+	// 		if(myState.pdf == null) return;
 			
-			// Get key code
-			var code = (e.keyCode ? e.keyCode : e.which);
+	// 		// Get key code
+	// 		var code = (e.keyCode ? e.keyCode : e.which);
 			
-			// If key code matches that of the Enter key
-			if(code == 13) {
-				var desiredPage = document.getElementById('current_page').valueAsNumber;
+	// 		// If key code matches that of the Enter key
+	// 		if(code == 13) {
+	// 			var desiredPage = document.getElementById('current_page').valueAsNumber;
 									
-				if(desiredPage >= 1 && desiredPage <= myState.pdf._pdfInfo.numPages) {
-						myState.currentPage = desiredPage;
-						document.getElementById("current_page").value = desiredPage;
+	// 			if(desiredPage >= 1 && desiredPage <= myState.pdf._pdfInfo.numPages) {
+	// 					myState.currentPage = desiredPage;
+	// 					document.getElementById("current_page").value = desiredPage;
 						
-						render(myState);
-				}
-			}
-		});
+	// 					render(myState);
+	// 			}
+	// 		}
+	// 	});
 	
-		document.getElementById('zoom_in').addEventListener('click', (e) => {
-			if(myState.pdf == null){
-				return;
-			}
-			myState.zoom += 0.5;
+	// 	document.getElementById('zoom_in').addEventListener('click', (e) => {
+	// 		if(myState.pdf == null){
+	// 			return;
+	// 		}
+	// 		myState.zoom += 0.5;
 			
-			render(myState);
-		});
+	// 		render(myState);
+	// 	});
 			
-		document.getElementById('zoom_out').addEventListener('click', (e) => {
-			if(myState.pdf == null){
-				return;
-			}
-			myState.zoom -= 0.5;
+	// 	document.getElementById('zoom_out').addEventListener('click', (e) => {
+	// 		if(myState.pdf == null){
+	// 			return;
+	// 		}
+	// 		myState.zoom -= 0.5;
 			
-			render(myState);
-		});
-	}, (reason) => {
-		console.error(reason)
-	});
+	// 		render(myState);
+	// 	});
+	// }, (reason) => {
+	// 	console.error(reason)
+	// });
 }
 
 function keyup(obj, e)
@@ -175,22 +195,24 @@ function scrollsync(obj1, obj2)
 	obj2.scrollTop = obj1.scrollTop;
 }
 
-function populate_rownr(obj, cntline)
-{
-	tmpstr = '';
-	for(i = 1; i <= cntline; i++)
-	{
-		tmpstr = tmpstr + i.toString() + '\n';
-	}
-	obj.value = tmpstr;
-}
+// function populate_rownr(obj, cntline)
+// {
+// 	tmpstr = '';
+// 	for(i = 1; i <= cntline; i++)
+// 	{
+// 		tmpstr = tmpstr + i.toString() + '\n';
+// 	}
+// 	obj.value = tmpstr;
+// }
 
-function count_lines(txt)
-{
-	if(txt == '')
-	{
-		return 1;
-	}
-	return txt.split('\n').length + 1;
-}
+// function count_lines(txt)
+// {
+// 	if(txt == '')
+// 	{
+// 		return 1;
+// 	}
+// 	return txt.split('\n').length + 1;
+// }
 
+
+					

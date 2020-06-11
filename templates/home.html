@@ -17,20 +17,19 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-	<!-- <script src="vendor/jquery/jquery.slim.min.js"></script>
-  	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  -->
+	
 
 </head>
-<body>
+<body id="gradient">
 
 	<header>
 		<!--Navbar-->
 		<nav class="mb-1 navbar navbar-expand-xl navbar-dark info-color bg-dark">
 			<a class="navbar-brand" href="#" style="font-family: 'Knewave', cursive;">LaTexOnlineEditor</a>
-			<div id="set">
-
-			</div>
-			<!-- <marquee id="rp" behavior="scroll" scrollamount = "10" direction="right" style="color: ghostwhite;" ></marquee> -->
+			<!-- <div id="set">
+					<marquee id="rp" behavior="scroll" scrollamount = "10" direction="right" style="color: ghostwhite;" > Welcome to Group 1 Project </marquee> 
+			</div> -->
+			
 			<script>
 
 				// var rp = Math.floor(Math.random() * 1000) + 100;
@@ -47,22 +46,22 @@
 				// }
 
 				// var ten = makeid(4);
-				$(function(){
-					var documentEl= $(document),
-					fadeElem = $('.fade-scroll');
-				documentEl.on('scroll',function()
-			{
-				var currScrollPos = document.scrollTop();
-				fadeElem.each(function(){
-					var $this = $(this),
-					elemtOffsetTop = $this.offset().top;
-					if(currScrollPos>elemtOffsetTop) $this.css('opacity',1-(currScrollPos-elemtOffsetTop)/100)
-				});
-			});
-		});
-				var ten = 'Wellcome to group 1'
-				// document.getElementById("rp").innerHTML = ten + " vừa nhận được " + rp + " RP từ hệ thống LatexOnlineEditor";
-				document.getElementById("set").innerHTML = '<marquee behavior="scroll" scrollamount = "10" direction="right" style="color: ghostwhite;" >'+ ten +'</marquee>';
+		// 		$(function(){
+		// 			var documentEl= $(document),
+		// 			fadeElem = $('.fade-scroll');
+		// 		documentEl.on('scroll',function()
+		// 	{
+		// 		var currScrollPos = document.scrollTop();
+		// 		fadeElem.each(function(){
+		// 			var $this = $(this),
+		// 			elemtOffsetTop = $this.offset().top;
+		// 			if(currScrollPos>elemtOffsetTop) $this.css('opacity',1-(currScrollPos-elemtOffsetTop)/100)
+		// 		});
+		// 	});
+		// });
+		// 		var ten = 'Wellcome to group 1'
+		// 		// document.getElementById("rp").innerHTML = ten + " vừa nhận được " + rp + " RP từ hệ thống LatexOnlineEditor";
+		// 		document.getElementById("set").innerHTML = '<marquee behavior="scroll" scrollamount = "10" direction="right" style="color: ghostwhite;" >'+ ten +'</marquee>';
 			</script>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
@@ -72,14 +71,14 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
 			  <ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-				  <a class="nav-link" href="register.html">
-					<button type="button" class="btn btn-light btn-outline-primary" >Register</button>
-					<span class="sr-only">(current)</span>
+				  <a  class="nav-link" href="register.html">
+					<button id="asd1"  type="button" class="btn btn-light btn-outline-primary "  >Register</button>
+					<span  class="sr-only">(current)</span>
 				  </a>
 				</li>
 				<li class="nav-item active">
-				  <a class="nav-link" href="login.html">
-					 <button type="button" class="btn btn-light btn-outline-primary" >Login</button>
+				  <a  class="nav-link" href="login.html">
+					 <button id="asd2"  type="button" class="btn btn-light btn-outline-primary " >Login</button>
 					<span class="sr-only">(current)</span>
 				  </a>
 				</li>
@@ -89,13 +88,13 @@
 		  </nav>
 			</header>
 
-<body id="gradient" >
+
 	<div class="label_content">
 		LaTexOnlineEditor</div>
 	<div class="body_content">
 			The easy to use, online, free, coolaborative LaTex editor
 	</div>
-	 <div class=" img_home"><img class=" img_shadow-right img_shadow-left" src="http://webcoban.vn/image/cat-2.jpg"></div>
+	 <div><img  class=" img-fluid" src="Untitled.png"></div>
 	 <div class="home_footer">
 
 		 <div class="body_content1">Get started now</div>
@@ -106,5 +105,78 @@
 		   <span class="sr-only">(current)</span>
 		 </a>
 	 </div>
+	 <div class="home_footer2">
+	 <footer>
+		<div class="container">
+		  <div class="row">
+			
+			<div class="col-lg-4 col-md-6">
+			  <h3>About </h3>
+			  <ul class="list-unstyled three-column">
+				<li>We are invisible</li>
+			  </ul>
+			  <ul class="list-unstyled socila-list">
+				<a><li><img src="https://www.kindpng.com/picc/m/128-1280192_github-logo-png-github-png-transparent-png.png" alt="" style="height: 48px; width: 48px;"  onclick="location.href='https://github.com/ngknnnn/FinalWeb.Latex'"/></li></a>
+				<!-- <li><img style="height: 48px; width: 48px;"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAeFBMVEX///8AAAD4+Pjp6eny8vLt7e3f39/Q0NA9PT11dXXHx8fi4uLa2tqUlJT19fV/f3+bm5uioqK+vr6zs7NgYGBWVlZISEgbGxtmZmaTk5OHh4eFhYU2NjawsLBQUFBsbGwtLS0lJSVDQ0MMDAwVFRUwMDB7e3sYGBguVSmxAAAIX0lEQVR4nO2d6ZaiOhCAryAqtAvuKy6tPf3+b3hnqIqgpEKAKBVPvn8N6qkiSa0J/d9/DofD4XA4HA6Hw+FwOBwOh8PhcDgcjg/E88aB7/vdsde2JC+gn0wWg2tHcDme4ihoWyhjRLtBR85pbr+W3mxDaIcMplYr+TVRqwds+m3LWZf+Qke/dCBnbctah+HxWY/LYr8bxXG83YXfz/d+orblrUrwuPyW28h/+kQ/Of3mP7LqtSJoXaY50dcTcnx6cd7K7t4pYTP8VSb2omT69fbZZw/D98jXmFkm8/55bkrwplkkMH29dAbIPMR+rPmVbFKfXiqaGe4zdKExfnfuc3Wg+1TaIvhBSa8VXdzwIHxKlQfzfvyLGMDqQyGG8fr1AsFMEdyaWIy7heI7imNhFGsGml9r/H7XrFzmwDW4rj3NurgYz0xTZAy0zw3SIQ8D1qU5qQyyRVvYbIr98I3gIjNryENrzC+fGqOCjU29z9Xa4CI0kOb1eS5F9GVbE78Vw2/NTfyWOcATrsz8GFYHWLmMHchkqGyGa/qPmV8zgq8Vq3WHSbwLw12cDEsexdyQ1TJHmAp0UH3En+YS/07ne6Qsy8BnN2albIBfGo1GhcLbXyUVpmTIbBAhq1+Q96NDUb9/rGm3DrMifIW0NfBAXmraeYrC8JFKlHBaMHH7iXII+09KXR//pIbxlN6NXyVzNQ6qVZhkyhy2s6+g2w38KM7VvIkgAVbi+VUyV6IH4stvjjJNHsxGkJXXiMU2UD239wJZk9wXxkKNUfHeXUe5ZwefODEpaV0GtE0QlZeV1KB0RW9DutogsLmYlLQmYPWkEekXarCnviuGWDoXQX8Ghf6EnqQDcoY+frlzlQXZc8Xsfytg1mXOEEdIWZBIaGsTpHeOZqRsQlpYuUludEH4kk4EZiWyJwRTwISMjQhINSCWu5RleeAaZfHChNT9rfSp1YKxXGlZA82RJMiGhdh6SWpKGUO4oVFt+UPZWwgljBRGmgD+XuLvBrrGHub5b3E2e6QReitp4nAtdprATSqT4oefkE2D87/rg8YiNuRAKFLBm80or7lkYUzXREQT6htCcCuS39iw0PBK2JNVBenSJbsuXg9ZaJgKUSwZebcKAcmEsFbQFW67sU84fJh5mh2kKTGjId5puZLhERoGlPWQkRCOhYWG1CytpOGc0JDHLL3JLY2RMeRhaS7/hPguXDayDnl4i9TS/xQue5QXkbEnbCkPj78hrMF3BelS33krBqY8ojYq8j4R1yVAzamoCZPIG6xEMQuE64nOT0TEmmWSPUFtulgPhMRWqykcEg+JSQYMbkFiUtJFpNMfw45vcRkyqWJg16J4fUREOwW21HJjUonCIkTRXWOprTTJD6jPsakmzoiFiNa0NMtfUIqwqQh3KUWwiEaW9AHsz0hqGAu9OfAGVpTnw02/So+Bu+Ek5VI+nRkcBVmQjRtiFfZeNIglGRKj7hpYBEkR4i4/uZZE9032DBh1SHGTlqy4LZqgJ3lpX+xdly1VTl1unE/SnQridMlNsncmOnfIRSgCHSY7FSDPl0fZIWrROTzpOLtvkZKmWF1yfbYC1FPkIfKuc2eTDFOJx715mF2VRz0QEbWeVwjA8/3Kb847ea7r9e3hAjEPwQxzcIbAkbSIf/kqHBjNOBM6gJEtFkdaAwQiU6WEUpA0JAPVI2sFmFR0ojP9leg3ItvD4EhlLrY1wDCoApD+n0teu9tJ1RyGkJRB0J2BKZC6Z+/P49NytVqetnN1YsxrYyKyMfnU96UzogVg5RTrpnXAPQ7czujBKjPy3gDYaURvOW4J8AhGDrqA3eWRVeTAqWVg7zkEQVp7HN7LzpR5OLDz9gia+MbdvoiftxcYchiQVWm1A94N1iyM/Ip0w2n7GAmXIWBrvR0jB4xgsxN6LAO2DJCuUdoacgzYMiAYaXLiLOAZsN0ZN5YPnCrjV7iQm2E1GRuY56+l19DrQyuRQUONBmx93TouxrbsYu48zbz+1IC7eTlQOax5lL5jLsd8HVBXPNf6bsI1bXqkQa5/45o2PTKtbQ7nDYb/rdR2aT9806ZHtjVDt5mR5OsdYOevcsHmYMsQitCtausPihfXl0hkGtxHU/E9J5A+s2pV0GxqpOk4hDyLFwWGNWwGDKHmzvf2WVaOvzGetWQI7/WyCt841pjYrTKoaPltG8Lq8TdMa47v2SNZVwqihw1LA21QLRGycAhFD1AviRrWChHaJq5QkIDiDtsqMIGnn0T1rBxCkUTpNOPtHMIKSVS9QJ0DE80kCg4tcHpHoi6B3tjYO4RicMqaGPApxr0YBWgj1c1O+t0tNrDUyPlCi4dQq4mBTe32T+DV5Ls0iQKDy+c9pVWJygaxa/kQihoo3YnaWz6EohVBnjfXPYTJGVCBaupC7Mrt1eTVUL7wa6zW3w6USdSoQg7Jly3t0W3Yl6CBYpMTzGBGJ39qEpLxN+jOfF+CBhhaF4u9idqTWAS1iciSfQkaEPG3NfsSNJBvIrKoqV3KTLbgSoNyq5D5PRhYS5rapUhCN/vaaUokB4Z0Chw2AWlgriSqVaSyicKBIb1Co01sHr2+ZrHYJp68PuzIZ/PCBCN850M0c0cVGfFwYChWJf7Wks/11x+R+T6Te1cJ21Owzci9b4btKdiGnEQgyvgUbDOGQrHjR8XcecBhRGRVw37wfVng7S3b/6SHl3970icFbBm5d2LZ2vMtwc80tLrbpOD+XwI/oUgqRfzX5w/09gJU0I5jI7XAf+LF5WWILyDIgtNPZfF5uf0T0Se7CuBif1e7hPiTXUVK8DHNGJLl51TyCWZsX8zicDgcDofD4XA4HA6Hw+FwOBwOh6Nt/gd+cUkdxJld/wAAAABJRU5ErkJggg==" alt="" /></li>
+				<li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSRWqf0hfrGSCgYxdLIEpVRxGyTLf9STqTGC7G19Q3c_CHGgbin&usqp=CAU" style="height: 48px; width: 48px;" ></li>
+			 --></ul>
+			</div>
+			
+			<!-- <div class="col-lg-4 col-md-6">
+			  <h3>latest Articles</h3>
+			  <div class="media">
+				<a href="#" class="pull-left">
+				  <img src="http://placehold.it/64x64" alt="" class="media-object" />
+				</a>
+				<div class="media-body">
+				  <h4 class="media-heading">Programming</h4>
+				  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				</div>
+			  </div>
+			  
+			  <div class="media">
+				<a href="#" class="pull-left">
+				  <img src="http://placehold.it/64x64" alt="" class="media-object" />
+				</a>
+				<div class="media-body">
+				  <h4 class="media-heading">Coding</h4>
+				  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				</div>
+			  </div>
+			  
+			  <div class="media">
+				<a href="#" class="pull-left">
+				  <img src="http://placehold.it/64x64" alt="" class="media-object" />
+				</a>
+				<div class="media-body">
+				  <h4 class="media-heading">Web Sesign</h4>
+				  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				</div>
+			  </div>
+			  
+			</div> -->
+			
+			<!-- <div class="col-lg-4">
+			  <h3>Our Work</h3>
+			  <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
+			  <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
+			  <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
+			  <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
+			</div> -->
+			<div class="mapouter">
+				<div class="gmap_canvas">
+					<h3 style="margin-left: 0px;">Our Location</h3>
+					<iframe id="gmap_canvas"
+				 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.615093522991!2d105.79904751488368!3d21.048081685987913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab233f04ea45%3A0x983a39c95b010740!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBLaG9hIGjhu41jIHbDoCBDw7RuZyBuZ2jhu4cgSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1585848041325!5m2!1svi!2s"
+				 frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width: 100%; height: 343px;" ></iframe><a href="https://www.pureblack.de/webdesign-muenchen/"></a>
+				</div>
+				<style>.mapouter{text-align:right;height:408px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:385px;width:100%;}</style>
+			</div>
+		  </div>
+		</div>
+		<div class="copyright text-center">
+		  Copyright &copy; 2020 <span>Group 1</span>
+		</div>
+	  </footer></div>
 </body>
 </html>

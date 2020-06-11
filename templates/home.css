@@ -3,10 +3,16 @@
 .home_footer{
 	background-color: black;
 	width: 100%;
-	height:  220px;
-	top:85%;
-	position: absolute;
+	height:  200px;
+	top:86%;
+    position: absolute;
+    bottom: 0px;
 	opacity: 0.8;
+}
+
+embed {
+  width: 900px;
+  height: 900px;
 }
 
 .label_content{
@@ -25,13 +31,12 @@
 {
 width: 100%;
 height: 800px;
-padding: 0px;
-margin: 0px;
+
 }
 .img_home{
 	position: absolute;
 	top: 40%;
-	left: 20%;
+	left: 15%;
 	margin: 0 auto;
 	z-index: 0;
 }
@@ -46,11 +51,11 @@ margin: 0px;
 	margin:auto;
  	display:block;
 }
-.img_home:hover{
+/* .img_home:hover{
 	transform: scale(1.25,1.15);
 	transition: 1.5s;
-}
-.img_shadow-right {
+} */
+/* .img_shadow-right {
     background-color: black;
     -moz-box-shadow: 3px 3px 5px 0px #666;
     -webkit-box-shadow: 3px 3px 5px 0px #666;
@@ -61,12 +66,15 @@ margin: 0px;
     -moz-box-shadow: -3px -3px 5px 0px #666;
     -webkit-box-shadow: -3px -3px 5px 0px #666;
     box-shadow: -3px -3px 5px 0px #666;
+} */
+.img-fluid{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 .container{
 	height: 100%;
-	width: 100%;
-
-
+  width: 100%;
 }
 .header{
 	padding: 10px;
@@ -103,6 +111,9 @@ margin: 0px;
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+.set{
+    width: 60%;
+}
 /* Webfonts */
 
 @font-face {
@@ -111,3 +122,102 @@ margin: 0px;
     font-weight: 700;
     src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
 }
+
+body{
+  
+}
+
+footer {
+    background: #222;
+    color: #aaa;
+    padding-top: 10px;
+  }
+  
+  footer a {
+    color: #aaa;
+  }
+  
+  footer a:hover {
+    color: #fff;
+  }
+  
+  footer h3 {
+   color: #0894d1;
+    letter-spacing: 1px;
+    margin: 30px 0 20px;
+  }
+  
+  footer .three-column {
+   overflow: hidden;
+  }
+  
+  footer .three-column li{
+   width: 33.3333%;
+    float: left;
+    padding: 5px 0;
+  }
+  
+  footer .socila-list {
+    overflow: hidden;
+    margin: 20px 0 10px;
+  }
+  
+  footer .socila-list li {
+    float: left;
+    margin-right: 3px;
+    opacity: 0.7;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  footer .socila-list li:hover {
+    opacity: 1;
+  }
+  
+  footer .img-thumbnail {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid #444;
+    margin-bottom: 5px;
+  }
+  
+  footer .copyright {
+    padding: 15px 0;
+    background: #333;
+    margin-top: 20px;
+    font-size: 15px;
+  }
+  
+  footer .copyright span {
+    color: #0894d1;
+  }
+
+  .home_footer2{
+      position: relative;
+      background-color: #222;
+  }
+
+  #asd1{
+       background: #343a40; 
+    
+     color: darkkhaki; border-color: darkkhaki; 
+  }
+
+#asd1:hover{
+   color: #343a40 ;
+   background: khaki;
+  }
+  #asd2{
+    background: #343a40; 
+ 
+  color: darkkhaki; border-color: darkkhaki; 
+}
+
+#asd2:hover{
+color: #343a40 ;
+background: khaki;
+}
+
+  
+
+  
